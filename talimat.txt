@@ -1,0 +1,108 @@
+Overview
+Research questions or hypotheses
+Within each standard PHQ-9 severity band (0–4, 5–9, 10–14, 15–19, 20–27), how many distinct symptom configurations are observed in pooled NHANES data (2005–2018), as quantified by:
+
+(a) the rarefied unique-profile count at a fixed subsample size (m), and
+(b) the Shannon effective number of profiles (exp(H))?
+
+This study does not include confirmatory hypotheses and does not involve inferential testing.
+
+Foreknowledge of data or evidence
+Data exists but the authors have not observed it yet. At least some of the data that will be used for this analysis plan exists and is possible for the authors to access. However, the authors certify that they have not accessed any of that data and will not do so until after this plan is registered.
+
+Explanation of foreknowledge and managing unintended influences
+The data are publicly available. However, the authors have not viewed, downloaded, or analyzed any individual-level PHQ-9 data prior to this registration.
+
+Research Design
+Study type
+Descriptive study: Describing some features of a dataset or sample, but typically not for the purposes of informing a causal effect.
+
+Intention for causal interpretation
+No causal relationship inferred: This study is not intended to inform a causal relationship. 
+
+Blinding of experimental treatments
+No blinding is involved.
+
+Additional blinding during research or analysis
+No data
+
+Study design
+This study uses cross-sectional NHANES public-use data collected between 2005 and 2018. The sample includes adults aged 18 years and older who completed all PHQ-9 items. Participants will be assigned to standard severity bands based on their total PHQ-9 scores. Symptom configurations will be defined using the nine PHQ-9 items. Within each severity band, heterogeneity will be quantified using the rarefied unique-profile count and Shannon entropy. The study does not involve experimental manipulation, treatment assignment, or causal inference.
+
+No files selected
+
+Randomization
+No data
+
+Sampling
+Data collection procedures
+This study uses public-use NHANES survey data. We will download the DPQ (PHQ-9 items) and DEMO (demographics and survey weights) files for the 2-year cycles 2005–2006 through 2017–2018. Files will be merged within each cycle by participant identifier (SEQN) and then pooled across cycles. The analytic sample will include adults aged 18 years or older (RIDAGEYR ≥ 18) with complete PHQ-9 item responses (DPQ010–DPQ090). Participants will be excluded if any PHQ-9 item value is outside {0,1,2,3}. No new data will be collected.
+
+Data collection procedures - File upload
+No files selected
+
+Sample size
+The sample size is determined by the NHANES data available in the selected cycles after applying the inclusion and exclusion criteria. We expect tens of thousands of eligible adults. We will report the final N overall and the N within each PHQ-9 severity band after complete-case filtering. No additional sampling will be performed.
+
+Sample size rationale
+No power analysis is planned because the study is descriptive and uses an existing dataset.
+
+Starting and stopping rules
+There is no recruitment or ongoing data collection. All analysis will be run after registration using the fixed inclusion/exclusion criteria and the pre-specified NHANES cycles (2005–2018). Data processing stops once the pooled analytic dataset is built and all pre-registered outputs are produced in a single complete run of the analysis pipeline.
+
+Variables
+Manipulated variables
+This study does not include any manipulated variables or treatment arms.
+
+No files selected
+
+Measured variables
+PHQ-9 item responses from the NHANES DPQ (Depression Questionnaire) module (9 items, each coded 0–3).
+Age in years (used to restrict to adults aged 18+).
+Sex and race/ethnicity variables (used only for descriptive subgroup tables).
+NHANES exam weight (used only for one supplementary weighted entropy check).
+
+Notes:
+
+The functional difficulty item is not included in the symptom profile definition.
+
+We will not publish any table listing exact symptom profiles with their frequencies. We will report only band-level diversity metrics and band-level item response distributions.
+
+Measured variables - File upload
+No files selected
+
+Indices
+In this study, a symptom profile refers to the full pattern of answers across the nine PHQ-9 items. The total score is calculated by summing these nine responses, which produces a value between 0 and 27. Based on this total score, participants are grouped into five severity bands: 0–4, 5–9, 10–14, 15–19, and 20–27.
+
+To estimate how many distinct profiles appear within each band, we use a rarefaction approach. We work with a predefined set of possible subsample sizes: 10, 25, 50, 100, 250, and 500. From this set, we select the largest size such that at least four of the five bands have a sample size greater than or equal to that value. If none of these values meet that condition, we use 10. Within each band, we randomly sample that number of participants without replacement and count how many different profiles appear in the sample. This procedure is repeated 1,000 times. We then report the average number of unique profiles together with the 2.5th to 97.5th percentile range. When a band contains fewer participants than the chosen subsample size, rarefaction is reported as not estimable.
+
+We also calculate Shannon entropy within each band using the observed profile frequencies. The effective number of profiles is reported as exp(H). As a supplementary step, we repeat the entropy calculation using NHANES survey weights that are adjusted for the pooled cycles.
+
+Indices - File upload
+No files selected
+
+Analysis Plan
+Statistical models
+This study does not use statistical models to test hypotheses. It is a descriptive analysis. We describe symptom-profile heterogeneity within each PHQ-9 severity band using (1) the rarefied unique-profile count at a fixed subsample size (m) and (2) the Shannon effective number of profiles (exp(H)). We report descriptive results only. We do not compute p-values or inferential confidence intervals.
+
+Statistical models - File upload
+No files selected
+
+Transformations
+We keep PHQ-9 items in their original coding (0–3). We compute the PHQ-9 total score by summing the nine items (range 0–27). We assign participants to fixed severity bands based on the total score (0–4, 5–9, 10–14, 15–19, 20–27). We do not use other transformations.
+
+Inference criteria
+This study is descriptive. We do not use hypothesis tests. We do not report p-values, Bayes factors, or model fit criteria. The rarefaction percentile range is only for subsampling variability. It is not an inferential confidence interval.
+
+Data inclusion and exclusion
+We use NHANES public-use cycles from 2005–2006 through 2017–2018. We include adults aged 18 years or older who have complete PHQ-9 item responses. We exclude a participant if any PHQ-9 item is missing or if any item has a response value outside {0, 1, 2, 3} (e.g., refused or don’t know). We do not remove outliers. If the code detects an unexpected response code, the pipeline will stop and we will record it as a deviation.
+
+Missing data
+We use a complete-case approach for the PHQ-9 items. If a participant has any missing PHQ-9 item, we exclude them. We do not impute missing data. We will report how many participants were excluded, item-level missingness rates, and descriptive comparisons of included vs excluded participants. We will not use statistical tests for these comparisons.
+
+Other planned analysis
+We will produce descriptive subgroup tables by sex, age group, and race/ethnicity. We will also report one supplementary weighted entropy check using NHANES weights. Any analysis that is not listed in this preregistration will be labeled exploratory and will not be included in the abstract.
+
+Other
+Context and additional information
+The NHANES data are public-use and will be downloaded directly from official NHANES sources by the analysis pipeline. The full analysis will be run for the first time after this registration. We will record the run date, Git commit hash, and Python version, and we will log any deviations from this preregistration. Results will be reported as descriptive summaries only.

@@ -1,0 +1,6 @@
+severity_band,n_people,sample_size,mean_unique_profiles,ci_2_5,ci_97_5,status
+1,27317,500,93.359,82.0,105.0,ok
+2,5811,500,398.839,382.0,415.0,ok
+3,2026,500,479.183,471.0,487.0,ok
+4,887,500,476.578,469.0,484.0,ok
+5,370,500,,,,not_estimable
